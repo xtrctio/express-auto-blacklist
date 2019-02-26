@@ -1,0 +1,48 @@
+{
+  "name": "@xtrctio/express-auto-blacklist",
+  "description": "Automatically blacklist IPs based on request patterns",
+  "version": "0.0.1",
+  "author": "Eric Hacke",
+  "bugs": {
+    "url": "https://github.com/xtrctio/express-auto-blacklist/issues"
+  },
+  "dependencies": {
+    "http-status": "^1.3.1",
+    "lru-cache": "^5.1.1"
+  },
+  "devDependencies": {
+    "@xtrctio/eslint-config": "^2.0.7",
+    "chai": "^4.1.2",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.3.1",
+    "istanbul": "^0.4.5",
+    "jsdoc": "^3.5.5",
+    "jsdoc-to-markdown": "^4.0.1",
+    "mocha": "^6.0.2",
+    "sinon": "^7.2.4"
+  },
+  "homepage": "https://github.com/xtrctio/express-auto-blacklist#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "fixpack && LIST=`git diff-index --cached --name-only HEAD | grep '.*\\.js' | grep -v json`; if [ \"$LIST\" ]; then npm run lint && git add $LIST; fi"
+    }
+  },
+  "keywords": [
+    "ban",
+    "blacklist",
+    "ip",
+    "security"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtrctio/express-auto-blacklist.git"
+  },
+  "scripts": {
+    "docs": "jsdoc2md --template README.template --files \"index.js\" > README.md",
+    "lint": "eslint \"**/*.js\" --fix",
+    "test": "npm run unit && npm run lint",
+    "unit": "nyc mocha --use_strict --exit \"tests/**/*.unit.js\""
+  }
+}
