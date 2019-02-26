@@ -33,6 +33,9 @@
     "ip",
     "security"
   ],
+  "files": [
+    "index.js"
+  ],
   "license": "MIT",
   "main": "index.js",
   "repository": {
