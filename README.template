@@ -1,0 +1,12 @@
+# express-auto-blacklist
+Automatically blacklist IPs based on request patterns
+
+Use:
+```javascript
+const AutoBlacklist = require('@xtrctio/auto-blacklist');
+
+const autoBlacklist = new AutoBlacklist([/some-blacklist-url/]);
+app.use(autoBlacklist.check);
+```
+
+{{>main}}
