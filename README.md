@@ -16,6 +16,7 @@ app.use(autoBlacklist.check);
 
 * [AutoBlacklist](#AutoBlacklist)
     * [new AutoBlacklist([blockPatterns], [maxStrikes], [strikeAgeMs], [maxBlockedIPs], [whitelist], [blacklist])](#new_AutoBlacklist_new)
+    * [.setBlockedCallback(callback)](#AutoBlacklist+setBlockedCallback)
     * [.check(req, res, next)](#AutoBlacklist+check) ⇒ <code>\*</code>
     * [.block(ip)](#AutoBlacklist+block) ⇒ <code>void</code>
     * [.strike(ip)](#AutoBlacklist+strike) ⇒ <code>boolean</code>
@@ -35,6 +36,17 @@ app.use(autoBlacklist.check);
 | [maxBlockedIPs] | <code>number</code> | <code>100000</code> | 
 | [whitelist] | <code>Array.&lt;string&gt;</code> | <code>[]</code> | 
 | [blacklist] | <code>Array.&lt;string&gt;</code> | <code>[]</code> | 
+
+<a name="AutoBlacklist+setBlockedCallback"></a>
+
+### autoBlacklist.setBlockedCallback(callback)
+Set callback for when an IP is blocked
+
+**Kind**: instance method of [<code>AutoBlacklist</code>](#AutoBlacklist)  
+
+| Param |
+| --- |
+| callback | 
 
 <a name="AutoBlacklist+check"></a>
 

@@ -41,6 +41,16 @@ class AutoBlacklist {
     });
 
     this.maxStrikes = maxStrikes;
+    this.blockedCallback = () => {};
+  }
+
+  /**
+   * Set callback for when an IP is blocked
+   * @param {function} callback
+   * @returns {void}
+   */
+  setBlockedCallback(callback) {
+    this.blockedCallback = callback;
   }
 
   /**
@@ -67,6 +77,7 @@ class AutoBlacklist {
    */
   block(ip) {
     this.blockedIPs.set(ip, true);
+    this.blockedCallback(ip);
   }
 
   /**
