@@ -1,7 +1,7 @@
 {
   "name": "@xtrctio/express-auto-blacklist",
   "description": "Automatically blacklist IPs based on request patterns",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Eric Hacke",
   "bugs": {
     "url": "https://github.com/xtrctio/express-auto-blacklist/issues"
